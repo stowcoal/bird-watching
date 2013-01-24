@@ -7,10 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+@class BirdSighting;
+@interface BirdWatchingDetailViewController : UITableViewController
 
-@interface BirdWatchingDetailViewController : UIViewController
+@property (strong, nonatomic) BirdSighting *sighting;
+@property (weak, nonatomic) IBOutlet UILabel *birdNameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *locationLabel;
+@property (weak, nonatomic) IBOutlet UILabel *dateLabel;
 
-@property (strong, nonatomic) id detailItem;
-
-@property (weak, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
 @end

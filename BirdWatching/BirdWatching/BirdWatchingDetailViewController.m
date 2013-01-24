@@ -5,10 +5,10 @@
 //  Created by CURTIS STOCHL on 1/22/13.
 //  Copyright (c) 2013 CURTIS STOCHL. All rights reserved.
 //
-
+#import "BirdSighting.h"
 #import "BirdWatchingDetailViewController.h"
 
-@interface BirdWatchingDetailViewController ()
+@interface BirdWatchingDetailViewController()
 - (void)configureView;
 @end
 
@@ -16,23 +16,54 @@
 
 #pragma mark - Managing the detail item
 
-- (void)setDetailItem:(id)newDetailItem
+- (void)setSighting:(BirdSighting *) newSighting
+
 {
-    if (_detailItem != newDetailItem) {
-        _detailItem = newDetailItem;
+    
+    if (_sighting != newSighting) {
+        
+        _sighting = newSighting;
+        
+        
         
         // Update the view.
+        
         [self configureView];
+        
     }
+    
 }
 
 - (void)configureView
-{
-    // Update the user interface for the detail item.
 
-    if (self.detailItem) {
-        self.detailDescriptionLabel.text = [[NSString alloc] initWithFormat:@"Curtis - %@", [self.detailItem description]];
+{
+    
+    // Update the user interface for the detail item.
+    
+    BirdSighting *theSighting = self.sighting;
+    
+    
+    
+    static NSDateFormatter *formatter = nil;
+    
+    if (formatter == nil) {
+        
+        formatter = [[NSDateFormatter alloc] init];
+        
+        [formatter setDateStyle:NSDateFormatterMediumStyle];
+        
     }
+    
+    if (theSighting) {
+        
+        self.birdNameLabel.text = theSighting.name;
+        
+        self.locationLabel.text = theSighting.location;
+        
+        self.dateLabel.text = [formatter stringFromDate:(NSDate *)theSighting.date];
+        
+    }
+    
 }
 
 - (void)viewDidLoad
