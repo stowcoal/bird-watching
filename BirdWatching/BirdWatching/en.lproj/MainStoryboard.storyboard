@@ -169,7 +169,140 @@
             </objects>
             <point key="canvasLocation" x="853" y="64"/>
         </scene>
+        <!--Add Sighting View Controller-->
+        <scene sceneID="53t-hI-VIN">
+            <objects>
+                <tableViewController id="SDu-WV-S8g" customClass="AddSightingViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="9vj-IQ-NMs">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <sections>
+                            <tableViewSection id="vnn-9Y-ozM">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="9wO-mX-ZcJ">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="999" text="Bird Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rk5-9Z-I1X">
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="146" type="user" id="RoN-ev-G39"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hnd-1D-e6C">
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="184" type="user" id="Ley-pE-5dN"/>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="97" type="user" id="Q70-Yf-m0O"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="rk5-9Z-I1X" firstAttribute="top" secondItem="9wO-mX-ZcJ" secondAttribute="top" constant="11" id="13s-uC-Yq3"/>
+                                            <constraint firstItem="rk5-9Z-I1X" firstAttribute="leading" secondItem="9wO-mX-ZcJ" secondAttribute="leading" constant="14" type="user" id="1zz-Oj-B5B"/>
+                                            <constraint firstAttribute="trailing" secondItem="Hnd-1D-e6C" secondAttribute="trailing" constant="20" type="user" id="9Uj-I4-BOi"/>
+                                            <constraint firstItem="Hnd-1D-e6C" firstAttribute="leading" secondItem="rk5-9Z-I1X" secondAttribute="trailing" constant="-44" type="user" id="wcj-GV-XMx"/>
+                                            <constraint firstItem="Hnd-1D-e6C" firstAttribute="centerY" secondItem="9wO-mX-ZcJ" secondAttribute="centerY" type="default" id="wip-7S-odV"/>
+                                        </constraints>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="eUM-PN-MgU">
+                                        <rect key="frame" x="0.0" y="44" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="999" text="Location" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O6l-ww-Rr7">
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="146" type="user" id="WJn-hM-3so"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IQ7-rd-JsE">
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="97" type="user" id="MSV-SY-L63"/>
+                                                        <constraint firstAttribute="width" constant="184" type="user" id="QJk-VN-r0C"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="O6l-ww-Rr7" firstAttribute="top" secondItem="eUM-PN-MgU" secondAttribute="top" constant="11" id="16J-Lu-dSh"/>
+                                            <constraint firstItem="IQ7-rd-JsE" firstAttribute="centerY" secondItem="eUM-PN-MgU" secondAttribute="centerY" type="default" id="1lV-VY-hhp"/>
+                                            <constraint firstAttribute="trailing" secondItem="IQ7-rd-JsE" secondAttribute="trailing" constant="20" type="user" id="C6G-HQ-ds5"/>
+                                            <constraint firstItem="IQ7-rd-JsE" firstAttribute="leading" secondItem="O6l-ww-Rr7" secondAttribute="trailing" constant="-44" type="user" id="NmX-g5-alO"/>
+                                            <constraint firstItem="O6l-ww-Rr7" firstAttribute="leading" secondItem="eUM-PN-MgU" secondAttribute="leading" constant="14" type="user" id="zCt-u5-aV2"/>
+                                        </constraints>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="SDu-WV-S8g" id="a8G-qn-CTz"/>
+                            <outlet property="delegate" destination="SDu-WV-S8g" id="Ipg-Nf-FFs"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="rsf-JL-G0h">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="1OT-C5-Ygt"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="8HH-NS-mtx"/>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Msi-03-ujs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1600" y="64"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ZJo-8e-WNU">
+            <objects>
+                <navigationController id="qp9-qi-Kd8" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="LBf-JB-ubZ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="SDu-WV-S8g" kind="relationship" relationship="rootViewController" id="TYt-At-pG4"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="grN-gL-YoE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1210" y="64"/>
+        </scene>
     </scenes>
+    <classes>
+        <class className="AddSightingViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AddSightingViewController.h"/>
+        </class>
+        <class className="BirdWatchingDetailViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BirdWatchingDetailViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="birdNameLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="dateLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="locationLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="BirdWatchingMasterViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BirdWatchingMasterViewController.h"/>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
