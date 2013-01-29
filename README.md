@@ -22,7 +22,7 @@ will be added to the list of all sightings.
 
 Currently there is no ability to delete a sighting from the 
 list.
-====================
+
 
 One concept I learned about was segues, particularly unwind 
 segues.  These tell the application what to do when a screen
