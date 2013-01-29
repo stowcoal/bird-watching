@@ -62,7 +62,13 @@
                             <outlet property="delegate" destination="12" id="15"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Bird Sightings" id="36"/>
+                    <navigationItem key="navigationItem" title="Bird Sightings" id="36">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="7V9-Uw-khp">
+                            <connections>
+                                <segue destination="qp9-qi-Kd8" kind="modal" id="svS-fG-DTf"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="17" sceneMemberID="firstResponder"/>
             </objects>
@@ -202,6 +208,9 @@
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="SDu-WV-S8g" id="gej-mx-ZLg"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -236,6 +245,9 @@
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="SDu-WV-S8g" id="wxR-jn-NDZ"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -257,13 +269,26 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="rsf-JL-G0h">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="1OT-C5-Ygt"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="8HH-NS-mtx"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="1OT-C5-Ygt">
+                            <connections>
+                                <segue destination="Jfi-CA-jeU" kind="unwind" identifier="CancelInput" unwindAction="cancel:" id="vRE-P8-q8K"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="8HH-NS-mtx">
+                            <connections>
+                                <segue destination="Jfi-CA-jeU" kind="unwind" identifier="ReturnInput" unwindAction="done:" id="aqO-Yc-gnb"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="birdNameInput" destination="Hnd-1D-e6C" id="D1z-Dw-Mbm"/>
+                        <outlet property="locationInput" destination="IQ7-rd-JsE" id="hiA-WL-41r"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Msi-03-ujs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Jfi-CA-jeU" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1600" y="64"/>
+            <point key="canvasLocation" x="838" y="-604"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ZJo-8e-WNU">
@@ -281,12 +306,16 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="grN-gL-YoE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1210" y="64"/>
+            <point key="canvasLocation" x="448" y="-604"/>
         </scene>
     </scenes>
     <classes>
         <class className="AddSightingViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/AddSightingViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="birdNameInput" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="locationInput" candidateClass="UITextField"/>
+            </relationships>
         </class>
         <class className="BirdWatchingDetailViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/BirdWatchingDetailViewController.h"/>
@@ -298,9 +327,16 @@
         </class>
         <class className="BirdWatchingMasterViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/BirdWatchingMasterViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="cancel:" candidateClass="UIStoryboardSegue"/>
+                <relationship kind="action" name="done:" candidateClass="UIStoryboardSegue"/>
+            </relationships>
         </class>
         <class className="NSLayoutConstraint" superclassName="NSObject">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="UIStoryboardSegue" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UIStoryboardSegue.h"/>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

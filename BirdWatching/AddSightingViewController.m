@@ -7,6 +7,7 @@
 //
 
 #import "AddSightingViewController.h"
+#import "BirdSighting.h"
 
 @interface AddSightingViewController ()
 
@@ -38,6 +39,25 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    if ((textField == self.birdNameInput) || (textField == self.locationInput)) {
+        [textField resignFirstResponder];
+    }
+    return YES;
+
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([[segue identifier] isEqualToString:@"ReturnInput"]) {
+        if([self.birdNameInput.text length] || [self.locationInput.text length]) {
+            BirdSighting *sighting;
+            NSDate *today = [NSDate date];
+            sighting = [[BirdSighting alloc] initWithName:self.birdNameInput.text location:self.locationInput.text date:today];
+            self.birdSighting = sighting;
+        }
+    }
 }
 
 #pragma mark - Table view data source
