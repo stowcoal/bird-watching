@@ -45,4 +45,7 @@
 - (void)addBirdSightingWithSighting:(BirdSighting *)sighting {
     [self.masterBirdSightingList addObject:sighting];
 }
+- (void)removeObjectFromMasterBirdSightingListAtIndex:(NSUInteger)index {
+    [self.masterBirdSightingList removeLastObject];
+}
 @end

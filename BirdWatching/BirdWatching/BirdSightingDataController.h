@@ -14,4 +14,5 @@
 - (NSUInteger)countOfList;
 - (BirdSighting *)objectInListAtIndex:(NSUInteger)theIndex;
 - (void)addBirdSightingWithSighting:(BirdSighting *)sighting;
+- (void)removeObjectFromMasterBirdSightingListAtIndex:(NSUInteger)index;
 @end
